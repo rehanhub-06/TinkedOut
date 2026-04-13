@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TinkedOut — Engineer Collaboration</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<body>
+
+<!-- ════════ SPLASH ════════ -->
+<div id="splash">
+  <div class="splash-logo">
+    <span id="s-T">T</span><span id="s-inked">inked</span><span id="s-O">O</span><span id="s-ut">ut</span>
+  </div>
+  <div class="splash-line" id="s-line"></div>
+  <div class="splash-sub" id="s-sub">Engineer Collaboration Platform</div>
+</div>
+
+<!-- ════════ LOGIN ════════ -->
+<div id="login-page">
+
+  <!-- LEFT branding -->
+  <div class="lp-left">
+    <div class="lp-deco">TO</div>
+    <div class="lp-logo">
+      <svg class="nav-logo-svg" viewBox="0 0 200 110" fill="none">
+        <path d="M18 20H88" stroke="#faf5e8" stroke-width="9" stroke-linecap="round"/>
+        <path d="M53 20V90" stroke="#faf5e8" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="152" cy="55" r="36" stroke="#faf5e8" stroke-width="9"/>
+        <circle cx="152" cy="55" r="24" stroke="#faf5e8" stroke-width="4" opacity="0.45"/>
+      </svg>
+      <span class="lp-logo-text">TinkedOut</span>
+    </div>
+    <div class="lp-hero">
+      <h1>Build <em>better</em> teams,<br>find your match.</h1>
+      <p>Connect with engineers who share your exact interests. Match instantly, collaborate deeply, ship together.</p>
+    </div>
+    <div class="lp-features">
+      <div class="lp-feat"><div class="lp-feat-icon">⚡</div><div class="lp-feat-text"><strong>ML-Powered Matching</strong><span>Cosine similarity on your interest vectors</span></div></div>
+      <div class="lp-feat"><div class="lp-feat-icon">🃏</div><div class="lp-feat-text"><strong>Swipe to Connect</strong><span>Tinder-style engineer discovery</span></div></div>
+      <div class="lp-feat"><div class="lp-feat-icon">💬</div><div class="lp-feat-text"><strong>Team Collab Rooms</strong><span>Discord-style channels for your team</span></div></div>
+      <div class="lp-feat"><div class="lp-feat-icon">🧑‍🏫</div><div class="lp-feat-text"><strong>Expert Mentors</strong><span>Book hourly or project sessions</span></div></div>
+    </div>
+  </div>
+
+  <!-- RIGHT form -->
+  <div class="lp-right">
+    <div class="lp-form-wrap">
+      <div class="lp-form-title" id="lp-title">Welcome back</div>
+      <div class="lp-form-sub" id="lp-sub">Sign in to your TinkedOut account</div>
+
+      <div class="lp-msg" id="lp-msg"></div>
+
+      <!-- OAuth -->
+      <div class="oauth-row">
+        <button class="oauth-btn" onclick="oauthDemo('google')">
+          <svg width="18" height="18" viewBox="0 0 24 24" style="flex-shrink:0">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+          <span>Google</span>
+        </button>
+        <button class="oauth-btn" onclick="oauthDemo('github')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#1e1508" style="flex-shrink:0">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>GitHub</span>
+        </button>
+      </div>
+
+      <div class="lp-div"><span>or continue with email</span></div>
+
+      <!-- Tabs -->
+      <div class="lp-tabs">
+        <button class="lp-tab active" onclick="lpTab(this,'si')">Sign in</button>
+        <button class="lp-tab" onclick="lpTab(this,'su')">Create account</button>
+      </div>
+
+      <!-- SIGN IN -->
+      <div id="lp-si">
+        <div class="field"><label>Email</label><input type="email" id="si-email" placeholder="you@vitap.ac.in" autocomplete="email"/></div>
+        <div class="field"><label>Password</label><input type="password" id="si-pw" placeholder="••••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')doSignIn()"/></div>
+        <div class="forgot-link" onclick="doForgot()">Forgot password?</div>
+        <button class="lp-submit" id="si-btn" onclick="doSignIn()"><span>Sign in</span></button>
+      </div>
+
+      <!-- SIGN UP -->
+      <div id="lp-su" style="display:none">
+        <div class="field-row">
+          <div class="field"><label>First name</label><input type="text" id="su-fname" placeholder="Naazil"/></div>
+          <div class="field"><label>Last name</label><input type="text" id="su-lname" placeholder="N"/></div>
+        </div>
+        <div class="field"><label>Email</label><input type="email" id="su-email" placeholder="you@vitap.ac.in" autocomplete="email"/></div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" id="su-pw" placeholder="Create a strong password" autocomplete="new-password" oninput="pwStrength(this.value)" onkeydown="if(event.key==='Enter')doSignUp()"/>
+          <div class="pw-bars"><div class="pw-bar" id="pw1"></div><div class="pw-bar" id="pw2"></div><div class="pw-bar" id="pw3"></div><div class="pw-bar" id="pw4"></div></div>
+          <div class="pw-hint" id="pw-hint"></div>
+        </div>
+        <button class="lp-submit" id="su-btn" onclick="doSignUp()"><span>Create account</span></button>
+        <p class="lp-terms">By creating an account you agree to our <a>Terms</a> &amp; <a>Privacy Policy</a></p>
+      </div>
+
+      <button class="lp-skip" onclick="startGuestFlow()">Continue as Guest →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ APP ════════ -->
+<div id="app">
+  <nav>
+    <div class="nav-logo" onclick="goScreen('match');setNav(0)">
+      <svg class="nav-logo-svg" viewBox="0 0 200 110" fill="none">
+        <path d="M18 20H88" stroke="#b89b6a" stroke-width="9" stroke-linecap="round"/>
+        <path d="M53 20V90" stroke="#b89b6a" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="152" cy="55" r="36" stroke="#b89b6a" stroke-width="9"/>
+        <circle cx="152" cy="55" r="24" stroke="#b89b6a" stroke-width="4" opacity="0.5"/>
+      </svg>
+      <span class="nav-logo-text">TinkedOut</span>
+    </div>
+    <div class="nav-links">
+      <button class="nav-btn active" onclick="goScreen('match');setNav(0)">Random Match</button>
+      <button class="nav-btn" onclick="goScreen('swipe');setNav(1)">Swipe</button>
+      <button class="nav-btn" onclick="goScreen('collab');setNav(2)">Collab</button>
+      <button class="nav-btn" onclick="goScreen('mentor');setNav(3)">Mentors</button>
+      <button class="nav-btn" onclick="goScreen('profile');setNav(4)">Profile</button>
+      <div class="nav-sep"></div>
+      <div class="nav-user" onclick="goScreen('profile');setNav(4)">
+        <div class="nav-av" id="nav-av">?</div>
+        <span class="nav-uname" id="nav-uname">Guest</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- RANDOM MATCH -->
+  <div class="screen active" id="screen-match">
+    <div class="pg-title">Random Match</div>
+    <div class="pg-sub">Add your interests — vectorised with cosine similarity to find your best match instantly</div>
+    <div class="match-grid">
+      <div class="int-panel">
+        <div class="panel-title">Your Interests</div>
+        <div class="panel-sub">Type custom interests or tap presets to build your vector</div>
+        <div class="int-input-row">
+          <input class="int-input" id="ci" type="text" placeholder="e.g. NLP, Rust, Unity..." onkeydown="if(event.key==='Enter')addCI()"/>
+          <button class="int-add-btn" onclick="addCI()">Add</button>
+        </div>
+        <div class="chips-label">Quick Add</div>
+        <div class="preset-chips">
+          <div class="p-chip" onclick="tPreset(this)">AI / ML</div>
+          <div class="p-chip" onclick="tPreset(this)">Web Dev</div>
+          <div class="p-chip" onclick="tPreset(this)">App Dev</div>
+          <div class="p-chip" onclick="tPreset(this)">Cybersecurity</div>
+          <div class="p-chip" onclick="tPreset(this)">Blockchain</div>
+          <div class="p-chip" onclick="tPreset(this)">Cloud</div>
+          <div class="p-chip" onclick="tPreset(this)">Data Science</div>
+          <div class="p-chip" onclick="tPreset(this)">Game Dev</div>
+          <div class="p-chip" onclick="tPreset(this)">DevOps</div>
+          <div class="p-chip" onclick="tPreset(this)">Open Source</div>
+          <div class="p-chip" onclick="tPreset(this)">Hackathons</div>
+          <div class="p-chip" onclick="tPreset(this)">Robotics</div>
+        </div>
+        <div class="chips-label">Vector (<span id="vcount">0</span> interests)</div>
+        <div class="added-chips" id="achips"><span class="empty-chips">None added yet</span></div>
+        <div class="int-note">Interests are one-hot encoded. Cosine similarity between vectors determines match quality and rank.</div>
+      </div>
+
+      <div class="match-panel">
+        <div>
+          <div class="panel-title">Matchmaking</div>
+          <div class="panel-sub" id="mhint">Add at least one interest, then press Connect</div>
+        </div>
+        <div class="connect-wrap">
+          <div class="connect-ring" id="cring" onclick="toggleConnect()">
+            <div class="rip" id="r1" style="display:none"></div>
+            <div class="rip" id="r2" style="display:none"></div>
+            <div class="rip" id="r3" style="display:none"></div>
+            <span id="rlabel">Connect</span>
+          </div>
+          <div class="connect-status" id="cstatus"></div>
+        </div>
+        <div class="match-card" id="mcard">
+          <div class="mc-row">
+            <div class="mc-av" id="mc-av">AK</div>
+            <div><div class="mc-name" id="mc-name">Arjun Kumar</div><div class="mc-role" id="mc-role">Full Stack Dev · VIT-AP</div></div>
+          </div>
+          <div class="mc-tags" id="mc-tags"></div>
+          <div class="score-row">
+            <span class="score-lbl">Similarity score</span>
+            <div class="score-track"><div class="score-fill" id="sfill" style="width:0%"></div></div>
+            <span class="score-val" id="sval">0%</span>
+          </div>
+          <div class="mc-actions">
+            <button class="btn btn-g" onclick="openChat()">Chat</button>
+            <button class="btn btn-n" onclick="skipM()">Skip</button>
+            <button class="btn btn-r" onclick="disconnectM()">Disconnect</button>
+          </div>
+        </div>
+        <div class="chat-wrap" id="chatwrap">
+          <div class="chat-topbar">
+            <div class="chat-user">
+              <div class="chat-av" id="chav">AK</div>
+              <div><div class="chat-name" id="chname">Arjun Kumar</div><div class="chat-dot">Online now</div></div>
+            </div>
+            <button class="end-btn" onclick="disconnectM()">End session</button>
+          </div>
+          <div class="chat-msgs" id="cmsgs">
+            <div class="msg-them">Hey! Looks like we share some interests 👀</div>
+            <div class="msg-me">Nice! What are you building?</div>
+            <div class="msg-them">An ML rec engine for the upcoming hackathon. You?</div>
+          </div>
+          <div class="chat-input-row">
+            <input class="chat-input" id="cinput" placeholder="Type a message..." onkeydown="if(event.key==='Enter')sendM()"/>
+            <button class="chat-send" onclick="sendM()">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SWIPE -->
+  <div class="screen" id="screen-swipe">
+    <div class="pg-title">Swipe to Connect</div>
+    <div class="pg-sub">Drag cards or use buttons — swipe right to connect, left to skip</div>
+    <div class="swipe-grid">
+      <div class="swipe-center">
+        <div class="card-stack" id="cstack"></div>
+        <div class="swipe-btns">
+          <button class="sw-btn sw-btn-n" onclick="swL()" title="Skip">✕</button>
+          <button class="sw-btn sw-btn-s" onclick="swSuper()" title="Super">★</button>
+          <button class="sw-btn sw-btn-y" onclick="swR()" title="Connect">♥</button>
+        </div>
+        <div class="sw-hint" id="sw-hint">Drag the card or use the buttons</div>
+      </div>
+      <div class="sw-panel">
+        <div class="panel-title" style="margin-bottom:10px">Filter</div>
+        <div class="sw-filter-chips">
+          <div class="p-chip on" onclick="sfChip(this)">All</div>
+          <div class="p-chip" onclick="sfChip(this)">AI / ML</div>
+          <div class="p-chip" onclick="sfChip(this)">Web Dev</div>
+          <div class="p-chip" onclick="sfChip(this)">Cloud</div>
+          <div class="p-chip" onclick="sfChip(this)">Cybersecurity</div>
+          <div class="p-chip" onclick="sfChip(this)">Game Dev</div>
+        </div>
+        <div class="sw-match-list">
+          <div class="sw-match-lbl">Matches (<span id="mcount">0</span>)</div>
+          <div id="mlist"><div style="font-size:11px;color:var(--d-muted);font-style:italic;font-weight:300">No matches yet — swipe right!</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COLLAB — Discord style -->
+  <div class="screen" id="screen-collab" style="padding:0">
+    <div class="dc-shell">
+
+      <!-- 1. Server icon rail -->
+      <div class="dc-rail">
+        <div class="dc-rail-icon active" title="TinkedOut" onclick="switchServer(this,'tinkedout')">
+          <svg width="20" height="20" viewBox="0 0 200 110" fill="none"><path d="M18 20H88" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><path d="M53 20V90" stroke="currentColor" stroke-width="9" stroke-linecap="round"/><circle cx="152" cy="55" r="36" stroke="currentColor" stroke-width="9"/><circle cx="152" cy="55" r="24" stroke="currentColor" stroke-width="4" opacity="0.5"/></svg>
+        </div>
+        <div class="dc-rail-sep"></div>
+        <div class="dc-rail-icon" title="Hackathon Team" onclick="switchServer(this,'hackathon')">HT</div>
+        <div class="dc-rail-icon" title="Study Group" onclick="switchServer(this,'study')">SG</div>
+        <div class="dc-rail-add" title="Add Server">+</div>
+      </div>
+
+      <!-- 2. Channel sidebar -->
+      <div class="dc-sidebar" id="dc-sidebar">
+        <!-- server header -->
+        <div class="dc-srv-header" id="dc-srv-header">
+          <span class="dc-srv-name" id="dc-srv-name">TinkedOut</span>
+          <svg class="dc-srv-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+
+        <!-- channels -->
+        <div class="dc-ch-list" id="dc-ch-list">
+          <div class="dc-section">
+            <div class="dc-section-hdr">
+              <span>Text Channels</span>
+              <button class="dc-add-ch" title="Add channel">+</button>
+            </div>
+            <div class="dc-ch active" data-ch="general" data-desc="General team chat" onclick="switchCh(this)">
+              <span class="dc-ch-hash">#</span><span class="dc-ch-label">general</span>
+            </div>
+            <div class="dc-ch" data-ch="ideas" data-desc="Brainstorm project ideas" onclick="switchCh(this)">
+              <span class="dc-ch-hash">#</span><span class="dc-ch-label">ideas</span>
+              <span class="dc-unread">3</span>
+            </div>
+            <div class="dc-ch" data-ch="code-review" data-desc="Share PRs and get feedback" onclick="switchCh(this)">
+              <span class="dc-ch-hash">#</span><span class="dc-ch-label">code-review</span>
+            </div>
+            <div class="dc-ch" data-ch="resources" data-desc="Links, docs and learning resources" onclick="switchCh(this)">
+              <span class="dc-ch-hash">#</span><span class="dc-ch-label">resources</span>
+              <span class="dc-unread">1</span>
+            </div>
+            <div class="dc-ch" data-ch="announcements" data-desc="Team announcements" onclick="switchCh(this)">
+              <span class="dc-ch-hash">📢</span><span class="dc-ch-label">announcements</span>
+            </div>
+          </div>
+
+          <div class="dc-section">
+            <div class="dc-section-hdr">
+              <span>Voice Channels</span>
+              <button class="dc-add-ch" title="Add channel">+</button>
+            </div>
+            <div class="dc-vc" onclick="joinVC(this,'standup')">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+              <span class="dc-vc-label">standup</span>
+              <span class="dc-vc-count" id="vc-standup-count"></span>
+            </div>
+            <div class="dc-vc" onclick="joinVC(this,'hackathon-room')">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+              <span class="dc-vc-label">hackathon-room</span>
+              <span class="dc-vc-count" id="vc-hack-count">2</span>
+            </div>
+            <div class="dc-vc-members" id="vc-hack-members">
+              <div class="dc-vc-member"><span class="dc-vc-m-dot"></span>Arjun Kumar</div>
+              <div class="dc-vc-member"><span class="dc-vc-m-dot"></span>Sneha Rao</div>
+            </div>
+            <div class="dc-vc" onclick="joinVC(this,'chill')">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+              <span class="dc-vc-label">chill</span>
+            </div>
+          </div>
+
+          <div class="dc-section">
+            <div class="dc-section-hdr"><span>Tasks</span></div>
+            <div class="dc-ch" data-ch="tasks" data-desc="Project board and task tracking" onclick="switchCh(this)">
+              <span class="dc-ch-hash">✓</span><span class="dc-ch-label">project-board</span>
+              <span class="dc-unread">5</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- user panel at bottom -->
+        <div class="dc-user-panel">
+          <div class="dc-user-info">
+            <div class="dc-user-av" id="dc-user-av">N</div>
+            <div class="dc-user-text">
+              <div class="dc-user-name" id="dc-user-name">Naazil N</div>
+              <div class="dc-user-status">
+                <span class="dc-status-dot online"></span>
+                <span id="dc-status-label">Online</span>
+              </div>
+            </div>
+          </div>
+          <div class="dc-user-icons">
+            <button class="dc-icon-btn" title="Mute" onclick="toggleMute(this)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            </button>
+            <button class="dc-icon-btn" title="Deafen" onclick="toggleDeafen(this)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+            </button>
+            <button class="dc-icon-btn" title="Settings" onclick="toggleStatus()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Main content -->
+      <div class="dc-main">
+
+        <!-- topbar -->
+        <div class="dc-topbar">
+          <div class="dc-topbar-left">
+            <span class="dc-topbar-icon" id="dc-topbar-icon">#</span>
+            <span class="dc-topbar-name" id="dc-topbar-name">general</span>
+            <div class="dc-topbar-sep"></div>
+            <span class="dc-topbar-desc" id="dc-topbar-desc">General team chat</span>
+          </div>
+          <div class="dc-topbar-right">
+            <button class="dc-icon-btn" title="Search" onclick="toggleSearch()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </button>
+            <button class="dc-icon-btn" title="Pinned messages">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 17v5"/><path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1v3.76z"/></svg>
+            </button>
+            <button class="dc-icon-btn dc-members-toggle" title="Toggle members" onclick="toggleMembers()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- search bar (hidden by default) -->
+        <div class="dc-search-bar" id="dc-search-bar" style="display:none">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" placeholder="Search messages in #general..." id="dc-search-input" oninput="searchMessages(this.value)"/>
+          <button onclick="toggleSearch()">✕</button>
+        </div>
+
+        <div class="dc-body">
+          <!-- messages -->
+          <div class="dc-feed" id="dc-feed">
+            <!-- channel welcome -->
+            <div class="dc-welcome" id="dc-welcome">
+              <div class="dc-welcome-icon">#</div>
+              <div class="dc-welcome-title">Welcome to #general!</div>
+              <div class="dc-welcome-sub">This is the start of the #general channel. Say hi to your team!</div>
+            </div>
+            <div class="dc-date-pill">Today</div>
+            <div class="dc-msg-group" id="msg-AK-1">
+              <div class="dc-av" style="background:#4a6a9a">AK</div>
+              <div class="dc-msg-content">
+                <div class="dc-msg-meta">
+                  <span class="dc-msg-name" style="color:#7a9aca">Arjun Kumar</span>
+                  <span class="dc-msg-time">9:14 AM</span>
+                </div>
+                <div class="dc-msg-text">Hey team! Just pushed the matchmaking module. Can someone review the cosine similarity implementation? 🔍</div>
+              </div>
+            </div>
+            <div class="dc-msg-group">
+              <div class="dc-av" style="background:#4a9a6a">SR</div>
+              <div class="dc-msg-content">
+                <div class="dc-msg-meta">
+                  <span class="dc-msg-name" style="color:#7aca9a">Sneha Rao</span>
+                  <span class="dc-msg-time">9:18 AM</span>
+                </div>
+                <div class="dc-msg-text">On it! Also — should we go FastAPI or Flask for the backend? I'm leaning FastAPI for async support.</div>
+              </div>
+            </div>
+            <div class="dc-msg-group dc-msg-mine">
+              <div class="dc-av" style="background:var(--d-gold);color:#0c0b09">N</div>
+              <div class="dc-msg-content">
+                <div class="dc-msg-meta">
+                  <span class="dc-msg-name" style="color:var(--d-gold)">Naazil N</span>
+                  <span class="dc-msg-time">9:21 AM</span>
+                </div>
+                <div class="dc-msg-text">FastAPI +1. The async support will be critical for real-time matching. Also Supabase realtime integrates better with it.</div>
+              </div>
+            </div>
+            <div class="dc-msg-group">
+              <div class="dc-av" style="background:#9a4a6a">RM</div>
+              <div class="dc-msg-content">
+                <div class="dc-msg-meta">
+                  <span class="dc-msg-name" style="color:#ca7a9a">Rahul Mehta</span>
+                  <span class="dc-msg-time">9:35 AM</span>
+                </div>
+                <div class="dc-msg-text">Agreed. I'll set up the Supabase schema for user interests and match sessions today.</div>
+                <div class="dc-reactions">
+                  <div class="dc-reaction" onclick="toggleReact(this)">👍 2</div>
+                  <div class="dc-reaction" onclick="toggleReact(this)">🔥 1</div>
+                </div>
+              </div>
+            </div>
+            <div class="dc-msg-group">
+              <div class="dc-av" style="background:#4a6a9a">AK</div>
+              <div class="dc-msg-content">
+                <div class="dc-msg-meta">
+                  <span class="dc-msg-name" style="color:#7a9aca">Arjun Kumar</span>
+                  <span class="dc-msg-time">10:02 AM</span>
+                </div>
+                <div class="dc-msg-text">Schema looks great. I've also started the WebSocket handler for real-time match updates. Should be ready for testing by EOD.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- members panel -->
+          <div class="dc-members-panel" id="dc-members-panel">
+            <div class="dc-members-section">
+              <div class="dc-members-lbl">Online — 3</div>
+              <div class="dc-member-row" onclick="openDM('AK','Arjun Kumar','#4a6a9a')">
+                <div class="dc-m-av" style="background:#4a6a9a">AK<span class="dc-m-dot online"></span></div>
+                <div class="dc-m-info">
+                  <div class="dc-m-name">Arjun Kumar</div>
+                  <div class="dc-m-status">Coding — VS Code</div>
+                </div>
+              </div>
+              <div class="dc-member-row" onclick="openDM('SR','Sneha Rao','#4a9a6a')">
+                <div class="dc-m-av" style="background:#4a9a6a">SR<span class="dc-m-dot online"></span></div>
+                <div class="dc-m-info">
+                  <div class="dc-m-name">Sneha Rao</div>
+                  <div class="dc-m-status">In hackathon-room 🔊</div>
+                </div>
+              </div>
+              <div class="dc-member-row">
+                <div class="dc-m-av" style="background:var(--d-gold);color:#0c0b09">N<span class="dc-m-dot online"></span></div>
+                <div class="dc-m-info">
+                  <div class="dc-m-name">Naazil N <span style="font-size:10px;color:var(--d-gold)">(you)</span></div>
+                  <div class="dc-m-status">Online</div>
+                </div>
+              </div>
+            </div>
+            <div class="dc-members-section" style="margin-top:1.25rem">
+              <div class="dc-members-lbl">Idle — 1</div>
+              <div class="dc-member-row" onclick="openDM('RM','Rahul Mehta','#9a4a6a')">
+                <div class="dc-m-av" style="background:#9a4a6a">RM<span class="dc-m-dot idle"></span></div>
+                <div class="dc-m-info">
+                  <div class="dc-m-name">Rahul Mehta</div>
+                  <div class="dc-m-status">Away</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DM overlay -->
+        <div class="dc-dm-overlay" id="dc-dm-overlay" style="display:none">
+          <div class="dc-dm-box">
+            <div class="dc-dm-header">
+              <div class="dc-dm-header-left">
+                <div class="dc-av" id="dm-av" style="width:26px;height:26px;font-size:10px;background:#4a6a9a">AK</div>
+                <span id="dm-name">Arjun Kumar</span>
+              </div>
+              <button onclick="closeDM()">✕</button>
+            </div>
+            <div class="dc-dm-msgs" id="dm-msgs">
+              <div class="dc-date-pill">Today</div>
+              <div class="dc-msg-group">
+                <div class="dc-av" id="dm-av2" style="background:#4a6a9a">AK</div>
+                <div class="dc-msg-content">
+                  <div class="dc-msg-meta"><span class="dc-msg-name" id="dm-name2">Arjun Kumar</span><span class="dc-msg-time">just now</span></div>
+                  <div class="dc-msg-text">Hey! What's up?</div>
+                </div>
+              </div>
+            </div>
+            <div class="dc-dm-input-row">
+              <input type="text" id="dm-inp" placeholder="Message..." onkeydown="if(event.key==='Enter')sendDM()"/>
+              <button onclick="sendDM()">↑</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- input area -->
+        <div class="dc-input-area">
+          <div class="dc-input-wrap">
+            <button class="dc-input-icon" title="Attach file">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+            </button>
+            <input class="dc-input" id="cinp" placeholder="Message #general..." onkeydown="if(event.key==='Enter')sendCollab()"/>
+            <div class="dc-input-actions">
+              <button class="dc-input-icon" title="Emoji" onclick="insertEmoji()">😊</button>
+              <button class="dc-input-icon dc-send-btn" onclick="sendCollab()" title="Send">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="dc-typing" id="dc-typing"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MENTOR -->
+  <div class="screen" id="screen-mentor">
+    <div class="pg-title">Mentors</div>
+    <div class="pg-sub">Search by interest or sector — book 1-on-1 hourly or project sessions with industry experts</div>
+
+    <!-- search + sector bar -->
+    <div style="display:flex;gap:10px;margin-bottom:1rem;flex-wrap:wrap;align-items:center">
+      <div style="position:relative;flex:1;min-width:200px">
+        <svg style="position:absolute;left:11px;top:50%;transform:translateY(-50%);width:14px;height:14px;stroke:var(--d-muted);fill:none;stroke-width:2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input id="mentor-search" type="text" placeholder="Search by name, skill, sector…" oninput="filterMentors()" style="width:100%;padding:9px 12px 9px 34px;background:var(--d-s1);border:1px solid var(--d-border);border-radius:10px;font-size:13px;color:var(--d-text);font-family:var(--sans);outline:none;" onfocus="this.style.borderColor='var(--d-gold)'" onblur="this.style.borderColor='var(--d-border)'"/>
+      </div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap" id="sector-chips">
+        <div class="p-chip on" onclick="setSector(this,'All')">All</div>
+        <div class="p-chip" onclick="setSector(this,'Software')">Software</div>
+        <div class="p-chip" onclick="setSector(this,'Mechanical')">Mechanical</div>
+        <div class="p-chip" onclick="setSector(this,'Electrical')">Electrical</div>
+        <div class="p-chip" onclick="setSector(this,'Civil')">Civil</div>
+        <div class="p-chip" onclick="setSector(this,'Aerospace')">Aerospace</div>
+        <div class="p-chip" onclick="setSector(this,'Biomedical')">Biomedical</div>
+        <div class="p-chip" onclick="setSector(this,'Chemical')">Chemical</div>
+        <div class="p-chip" onclick="setSector(this,'Data')">Data & AI</div>
+        <div class="p-chip" onclick="setSector(this,'Product')">Product</div>
+      </div>
+    </div>
+
+    <div style="font-size:11px;color:var(--d-muted);margin-bottom:1rem;font-weight:300"><span id="mentor-count">0</span> mentors found</div>
+
+    <div class="mentor-grid-layout">
+      <div class="mentor-cards" id="mcards" style="grid-template-columns:repeat(3,1fr)"></div>
+      <div class="book-panel">
+        <div class="bp-title">Book a Session</div>
+        <div class="bp-sub">Select a mentor to get started</div>
+        <div class="bp-empty" id="bpempty">No mentor selected yet</div>
+        <div class="bp-content" id="bpcontent">
+          <div class="bp-av-row"><div class="bp-av" id="bpav">DR</div><div><div class="bp-name" id="bpname">Dr. Ravi</div><div class="bp-role" id="bprole">ML Expert</div></div></div>
+          <div style="font-size:10px;color:var(--d-muted);margin-bottom:8px;font-weight:300" id="bpsector"></div>
+          <div class="bp-divider"></div>
+          <div class="bp-lbl">Session Type</div>
+          <div class="bp-types">
+            <div class="bp-type on" onclick="bpType(this,'h')"><div class="bp-type-icon">⏱</div><div class="bp-type-lbl">Hourly</div><div class="bp-type-price" id="bph">₹800/hr</div></div>
+            <div class="bp-type" onclick="bpType(this,'p')"><div class="bp-type-icon">📦</div><div class="bp-type-lbl">Project</div><div class="bp-type-price" id="bpp">₹4000</div></div>
+          </div>
+          <div class="bp-lbl">Available Slots</div>
+          <div class="bp-slots" id="bpslots">
+            <div class="bp-slot on" onclick="bpSlot(this)">Mon 10 AM</div>
+            <div class="bp-slot" onclick="bpSlot(this)">Mon 2 PM</div>
+            <div class="bp-slot taken">Tue 11 AM</div>
+            <div class="bp-slot" onclick="bpSlot(this)">Wed 3 PM</div>
+            <div class="bp-slot" onclick="bpSlot(this)">Thu 10 AM</div>
+            <div class="bp-slot taken">Fri 9 AM</div>
+          </div>
+          <div class="bp-total-row"><span class="bp-total-lbl">Total</span><span class="bp-total-val" id="bptotal">₹800</span></div>
+          <button class="bp-confirm" onclick="bpConfirm()">Confirm Booking</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROFILE -->
+  <div class="screen" id="screen-profile">
+    <div class="pg-title">Profile</div>
+    <div class="pg-sub">Your public presence on TinkedOut</div>
+    <div class="profile-shell">
+      <div class="prof-card">
+        <div class="prof-banner"></div>
+        <div class="prof-body">
+          <div class="prof-av" id="prof-av">N</div>
+          <div class="prof-name" id="prof-name">Naazil N</div>
+          <div class="prof-sub" id="prof-sub">Computer Science · VIT-AP University<br>naazil@vitap.ac.in</div>
+          <div class="prof-stats">
+            <div class="prof-stat"><div class="prof-stat-num">12</div><div class="prof-stat-lbl">Matches</div></div>
+            <div class="prof-stat"><div class="prof-stat-num">3</div><div class="prof-stat-lbl">Teams</div></div>
+            <div class="prof-stat"><div class="prof-stat-num">87%</div><div class="prof-stat-lbl">Score</div></div>
+          </div>
+          <div class="prof-divider"></div>
+          <div class="prof-sec-lbl">Interests</div>
+          <div class="prof-tags"><span class="prof-tag">AI / ML</span><span class="prof-tag">Web Dev</span><span class="prof-tag">Cloud</span><span class="prof-tag">Cybersecurity</span></div>
+          <div class="prof-divider"></div>
+          <div class="prof-btns">
+            <button class="prof-btn prof-btn-g" onclick="openEditModal()">Edit Profile</button>
+            <button class="prof-btn prof-btn-n" onclick="shareProfile()">Share</button>
+          </div>
+        </div>
+      </div>
+      <div class="prof-right">
+        <div class="prof-section"><h4>About</h4><p class="prof-about">Final year CSE student passionate about scalable systems and ML-powered products. Looking for hackathon partners and long-term collaborators. Currently building TinkedOut — an ML-based engineer matchmaking platform.</p></div>
+        <div class="prof-section">
+          <h4>Recent Activity</h4>
+          <div class="act-item"><div class="act-dot on"></div><div class="act-txt">Matched with Arjun Kumar · AI/ML, Web Dev</div><div class="act-time">2h ago</div></div>
+          <div class="act-item"><div class="act-dot on"></div><div class="act-txt">Joined Hackathon 2025 team</div><div class="act-time">1d ago</div></div>
+          <div class="act-item"><div class="act-dot"></div><div class="act-txt">Updated interests — added Cloud, DevOps</div><div class="act-time">2d ago</div></div>
+          <div class="act-item"><div class="act-dot"></div><div class="act-txt">Connected with Sneha Rao · Data Science</div><div class="act-time">3d ago</div></div>
+        </div>
+        <div class="prof-section">
+          <h4>Match History</h4>
+          <div class="act-item"><div class="act-dot on"></div><div class="act-txt">Arjun Kumar — 91% match</div><div class="act-time">Active</div></div>
+          <div class="act-item"><div class="act-dot on"></div><div class="act-txt">Sneha Rao — 86% match</div><div class="act-time">Active</div></div>
+          <div class="act-item"><div class="act-dot"></div><div class="act-txt">Priya Venkat — 83% match</div><div class="act-time">Ended</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ GUEST BIO MODAL ════════ -->
+<div id="guest-modal" style="display:none;position:fixed;inset:0;z-index:4000;background:rgba(12,11,9,0.9);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:1rem">
+  <div style="background:var(--p-bg3);border:1px solid var(--p-bg2);border-radius:20px;width:100%;max-width:460px;padding:2.25rem;position:relative;font-family:var(--sans)">
+
+    <!-- step indicator -->
+    <div style="display:flex;gap:6px;margin-bottom:1.75rem" id="guest-steps">
+      <div style="flex:1;height:3px;border-radius:2px;background:var(--p-brown)" id="gstep1"></div>
+      <div style="flex:1;height:3px;border-radius:2px;background:var(--p-bg2)" id="gstep2"></div>
+      <div style="flex:1;height:3px;border-radius:2px;background:var(--p-bg2)" id="gstep3"></div>
+    </div>
+
+    <!-- STEP 1: name + avatar -->
+    <div id="g-page1">
+      <div style="font-family:var(--serif);font-size:22px;color:var(--p-brown);margin-bottom:4px">Hey, what do we call you?</div>
+      <div style="font-size:13px;color:var(--p-brown3);margin-bottom:20px;font-weight:300">You're joining as a guest. Pick a display name.</div>
+      <!-- guest tag preview -->
+      <div style="background:var(--p-bg2);border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:12px;margin-bottom:18px">
+        <div id="g-av-preview" style="width:48px;height:48px;border-radius:50%;background:var(--p-brown4);color:var(--p-cream);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;flex-shrink:0">?</div>
+        <div>
+          <div id="g-name-preview" style="font-size:15px;font-weight:500;color:var(--p-brown)">Guest#----</div>
+          <div style="font-size:11px;color:var(--p-brown4);margin-top:2px">Guest Account · Limited access</div>
+        </div>
+      </div>
+      <div style="margin-bottom:14px">
+        <div style="font-size:10px;color:var(--p-brown3);font-weight:600;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:5px">Display Name <span style="font-weight:300;text-transform:none">(or leave blank for random)</span></div>
+        <input id="g-name" type="text" placeholder="e.g. Naazil" maxlength="20" oninput="updateGuestPreview()" style="width:100%;padding:10px 13px;background:var(--p-cream);border:1px solid var(--p-bg2);border-radius:10px;font-size:14px;color:var(--p-brown);font-family:var(--sans);outline:none" onfocus="this.style.borderColor='var(--p-brown4)'" onblur="this.style.borderColor='var(--p-bg2)'"/>
+      </div>
+      <!-- avatar color -->
+      <div style="font-size:10px;color:var(--p-brown3);font-weight:600;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:8px">Avatar Color</div>
+      <div style="display:flex;gap:8px;margin-bottom:20px">
+        <div onclick="setGuestColor(this,'#b89b6a')" style="width:26px;height:26px;border-radius:50%;background:#b89b6a;cursor:pointer;border:2px solid var(--p-brown4);transition:transform 0.15s" title="Gold"></div>
+        <div onclick="setGuestColor(this,'#4a6a9a')" style="width:26px;height:26px;border-radius:50%;background:#4a6a9a;cursor:pointer;border:2px solid transparent;transition:transform 0.15s" title="Blue"></div>
+        <div onclick="setGuestColor(this,'#4a9a6a')" style="width:26px;height:26px;border-radius:50%;background:#4a9a6a;cursor:pointer;border:2px solid transparent;transition:transform 0.15s" title="Green"></div>
+        <div onclick="setGuestColor(this,'#9a4a6a')" style="width:26px;height:26px;border-radius:50%;background:#9a4a6a;cursor:pointer;border:2px solid transparent;transition:transform 0.15s" title="Pink"></div>
+        <div onclick="setGuestColor(this,'#7a6a9a')" style="width:26px;height:26px;border-radius:50%;background:#7a6a9a;cursor:pointer;border:2px solid transparent;transition:transform 0.15s" title="Purple"></div>
+        <div onclick="setGuestColor(this,'#6a3a2a')" style="width:26px;height:26px;border-radius:50%;background:#6a3a2a;cursor:pointer;border:2px solid transparent;transition:transform 0.15s" title="Brown"></div>
+      </div>
+      <button onclick="guestNext(2)" style="width:100%;padding:12px;background:var(--p-brown);color:var(--p-cream);border:none;border-radius:10px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--sans)">Next →</button>
+    </div>
+
+    <!-- STEP 2: bio + interests -->
+    <div id="g-page2" style="display:none">
+      <div style="font-family:var(--serif);font-size:22px;color:var(--p-brown);margin-bottom:4px">Tell us about yourself</div>
+      <div style="font-size:13px;color:var(--p-brown3);margin-bottom:18px;font-weight:300">This helps others know who you are when you match.</div>
+      <div style="margin-bottom:14px">
+        <div style="font-size:10px;color:var(--p-brown3);font-weight:600;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:5px">Bio / About</div>
+        <textarea id="g-bio" rows="3" placeholder="e.g. Final year CSE student. Into ML and hackathons. Looking for project collaborators." style="width:100%;padding:10px 13px;background:var(--p-cream);border:1px solid var(--p-bg2);border-radius:10px;font-size:13px;color:var(--p-brown);font-family:var(--sans);outline:none;resize:none" onfocus="this.style.borderColor='var(--p-brown4)'" onblur="this.style.borderColor='var(--p-bg2)'"></textarea>
+      </div>
+      <div style="margin-bottom:14px">
+        <div style="font-size:10px;color:var(--p-brown3);font-weight:600;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:5px">Department / Branch <span style="font-weight:300;text-transform:none">(optional)</span></div>
+        <input id="g-dept" type="text" placeholder="e.g. Computer Science" style="width:100%;padding:10px 13px;background:var(--p-cream);border:1px solid var(--p-bg2);border-radius:10px;font-size:13px;color:var(--p-brown);font-family:var(--sans);outline:none" onfocus="this.style.borderColor='var(--p-brown4)'" onblur="this.style.borderColor='var(--p-bg2)'"/>
+      </div>
+      <div style="margin-bottom:18px">
+        <div style="font-size:10px;color:var(--p-brown3);font-weight:600;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:8px">Interests <span style="font-weight:300;text-transform:none">(tap to select)</span></div>
+        <div id="g-int-chips" style="display:flex;flex-wrap:wrap;gap:6px">
+          <div class="g-chip" onclick="toggleGuestInt(this)">AI / ML</div>
+          <div class="g-chip" onclick="toggleGuestInt(this)">Web Dev</div>
+          <div class="g-chip" onclick="toggleGuestInt(this)">App Dev</div>
+          <div class="g-chip" onclick="toggleGuestInt(this)">Cybersecurity</div>
+          <div class="g-chip" onclick="toggleGuestInt(this)">Blockchain</div>
+          <div class="g-chip" onclick="toggleGuestInt(this)">Cloud</div>
+          <div class="g-chip" onclick="toggleGuestInt(this)">Data Science</div>
+          <div class="g-chip" onclick="toggleGuestInt(this)">Game Dev</div>
+          <div class="g-chip" onclick="toggleGuestInt(this)">DevOps</div>
+          <div class="g-chip" onclick="toggleGuestInt(this)">Hackathons</div>
+          <div class="g-chip" onclick="toggleGuestInt(this)">Robotics</div>
+          <div class="g-chip" onclick="toggleGuestInt(this)">Open Source</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px">
+        <button onclick="guestNext(1)" style="padding:12px 20px;background:transparent;border:1px solid var(--p-bg2);border-radius:10px;font-size:13px;color:var(--p-brown3);cursor:pointer;font-family:var(--sans)">← Back</button>
+        <button onclick="guestNext(3)" style="flex:1;padding:12px;background:var(--p-brown);color:var(--p-cream);border:none;border-radius:10px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--sans)">Next →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: limitations notice -->
+    <div id="g-page3" style="display:none">
+      <div style="font-family:var(--serif);font-size:22px;color:var(--p-brown);margin-bottom:4px">Guest Access</div>
+      <div style="font-size:13px;color:var(--p-brown3);margin-bottom:18px;font-weight:300">You can explore most of TinkedOut, but some features need a full account.</div>
+
+      <div style="background:var(--p-bg2);border-radius:12px;padding:14px 16px;margin-bottom:16px;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:22px;height:22px;border-radius:50%;background:#d9f0e3;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">✓</div>
+          <div style="font-size:13px;color:var(--p-brown2)">Random matchmaking &amp; chat</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:22px;height:22px;border-radius:50%;background:#d9f0e3;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">✓</div>
+          <div style="font-size:13px;color:var(--p-brown2)">Swipe to discover engineers</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:22px;height:22px;border-radius:50%;background:#d9f0e3;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">✓</div>
+          <div style="font-size:13px;color:var(--p-brown2)">Browse mentors &amp; profiles</div>
+        </div>
+        <div style="height:1px;background:var(--p-brown4);opacity:0.3"></div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:22px;height:22px;border-radius:50%;background:#fdecea;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">✕</div>
+          <div style="font-size:13px;color:var(--p-brown3)">Collab rooms (sign in required)</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:22px;height:22px;border-radius:50%;background:#fdecea;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">✕</div>
+          <div style="font-size:13px;color:var(--p-brown3)">Booking mentor sessions</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:22px;height:22px;border-radius:50%;background:#fdecea;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">✕</div>
+          <div style="font-size:13px;color:var(--p-brown3)">Saving matches &amp; teams</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:10px">
+        <button onclick="guestNext(2)" style="padding:12px 20px;background:transparent;border:1px solid var(--p-bg2);border-radius:10px;font-size:13px;color:var(--p-brown3);cursor:pointer;font-family:var(--sans)">← Back</button>
+        <button onclick="finishGuestSetup()" style="flex:1;padding:12px;background:var(--p-brown);color:var(--p-cream);border:none;border-radius:10px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--sans)">Enter as Guest</button>
+      </div>
+      <div style="text-align:center;margin-top:12px">
+        <button onclick="closeGuestModal();lpTab(document.querySelector('.lp-tab'),'si')" style="background:none;border:none;font-size:12px;color:var(--p-brown4);cursor:pointer;font-family:var(--sans);text-decoration:underline;text-underline-offset:2px">Sign in instead for full access</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+<div id="edit-modal" style="display:none;position:fixed;inset:0;z-index:3000;background:rgba(12,11,9,0.85);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:1rem">
+  <div style="background:var(--d-s1);border:1px solid var(--d-border2);border-radius:18px;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;padding:2rem;position:relative">
+    <!-- header -->
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem">
+      <div style="font-family:var(--serif);font-size:20px;color:var(--d-text)">Edit Profile</div>
+      <button onclick="closeEditModal()" style="background:var(--d-s2);border:1px solid var(--d-border);color:var(--d-muted2);width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;font-family:var(--sans)">×</button>
+    </div>
+
+    <!-- avatar section -->
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--d-border)">
+      <div id="edit-av-preview" style="width:60px;height:60px;border-radius:50%;background:var(--d-gold);color:var(--d-bg);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;font-family:var(--sans);flex-shrink:0">N</div>
+      <div>
+        <div style="font-size:13px;color:var(--d-text);font-weight:500;margin-bottom:4px">Profile Photo</div>
+        <div style="font-size:11px;color:var(--d-muted);font-weight:300;margin-bottom:8px">Choose an avatar color or upload a photo</div>
+        <div style="display:flex;gap:7px;flex-wrap:wrap">
+          <div class="av-color" onclick="setAvColor(this,'#b89b6a','#0c0b09')" style="width:22px;height:22px;border-radius:50%;background:#b89b6a;cursor:pointer;border:2px solid var(--d-gold);transition:transform 0.15s"></div>
+          <div class="av-color" onclick="setAvColor(this,'#2a7a50','#fff')" style="width:22px;height:22px;border-radius:50%;background:#2a7a50;cursor:pointer;border:2px solid transparent;transition:transform 0.15s"></div>
+          <div class="av-color" onclick="setAvColor(this,'#4a6a9a','#fff')" style="width:22px;height:22px;border-radius:50%;background:#4a6a9a;cursor:pointer;border:2px solid transparent;transition:transform 0.15s"></div>
+          <div class="av-color" onclick="setAvColor(this,'#8a4a9a','#fff')" style="width:22px;height:22px;border-radius:50%;background:#8a4a9a;cursor:pointer;border:2px solid transparent;transition:transform 0.15s"></div>
+          <div class="av-color" onclick="setAvColor(this,'#9a4a4a','#fff')" style="width:22px;height:22px;border-radius:50%;background:#9a4a4a;cursor:pointer;border:2px solid transparent;transition:transform 0.15s"></div>
+          <div class="av-color" onclick="setAvColor(this,'#3a3a6a','#fff')" style="width:22px;height:22px;border-radius:50%;background:#3a3a6a;cursor:pointer;border:2px solid transparent;transition:transform 0.15s"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- fields -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+      <div>
+        <div style="font-size:10px;color:var(--d-muted);font-weight:500;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:5px">First Name</div>
+        <input id="ep-fname" type="text" style="width:100%;padding:9px 12px;background:var(--d-s2);border:1px solid var(--d-border);border-radius:9px;font-size:13px;color:var(--d-text);font-family:var(--sans);outline:none" onfocus="this.style.borderColor='var(--d-gold)'" onblur="this.style.borderColor='var(--d-border)'" oninput="updateAvPreview()"/>
+      </div>
+      <div>
+        <div style="font-size:10px;color:var(--d-muted);font-weight:500;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:5px">Last Name</div>
+        <input id="ep-lname" type="text" style="width:100%;padding:9px 12px;background:var(--d-s2);border:1px solid var(--d-border);border-radius:9px;font-size:13px;color:var(--d-text);font-family:var(--sans);outline:none" onfocus="this.style.borderColor='var(--d-gold)'" onblur="this.style.borderColor='var(--d-border)'"/>
+      </div>
+    </div>
+    <div style="margin-bottom:12px">
+      <div style="font-size:10px;color:var(--d-muted);font-weight:500;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:5px">Email</div>
+      <input id="ep-email" type="email" style="width:100%;padding:9px 12px;background:var(--d-s2);border:1px solid var(--d-border);border-radius:9px;font-size:13px;color:var(--d-text);font-family:var(--sans);outline:none" onfocus="this.style.borderColor='var(--d-gold)'" onblur="this.style.borderColor='var(--d-border)'"/>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+      <div>
+        <div style="font-size:10px;color:var(--d-muted);font-weight:500;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:5px">Department / Branch</div>
+        <input id="ep-dept" type="text" placeholder="e.g. Computer Science" style="width:100%;padding:9px 12px;background:var(--d-s2);border:1px solid var(--d-border);border-radius:9px;font-size:13px;color:var(--d-text);font-family:var(--sans);outline:none" onfocus="this.style.borderColor='var(--d-gold)'" onblur="this.style.borderColor='var(--d-border)'"/>
+      </div>
+      <div>
+        <div style="font-size:10px;color:var(--d-muted);font-weight:500;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:5px">University</div>
+        <input id="ep-uni" type="text" placeholder="e.g. VIT-AP University" style="width:100%;padding:9px 12px;background:var(--d-s2);border:1px solid var(--d-border);border-radius:9px;font-size:13px;color:var(--d-text);font-family:var(--sans);outline:none" onfocus="this.style.borderColor='var(--d-gold)'" onblur="this.style.borderColor='var(--d-border)'"/>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+      <div>
+        <div style="font-size:10px;color:var(--d-muted);font-weight:500;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:5px">GitHub URL</div>
+        <input id="ep-github" type="url" placeholder="https://github.com/username" style="width:100%;padding:9px 12px;background:var(--d-s2);border:1px solid var(--d-border);border-radius:9px;font-size:13px;color:var(--d-text);font-family:var(--sans);outline:none" onfocus="this.style.borderColor='var(--d-gold)'" onblur="this.style.borderColor='var(--d-border)'"/>
+      </div>
+      <div>
+        <div style="font-size:10px;color:var(--d-muted);font-weight:500;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:5px">LinkedIn URL</div>
+        <input id="ep-linkedin" type="url" placeholder="https://linkedin.com/in/username" style="width:100%;padding:9px 12px;background:var(--d-s2);border:1px solid var(--d-border);border-radius:9px;font-size:13px;color:var(--d-text);font-family:var(--sans);outline:none" onfocus="this.style.borderColor='var(--d-gold)'" onblur="this.style.borderColor='var(--d-border)'"/>
+      </div>
+    </div>
+    <div style="margin-bottom:12px">
+      <div style="font-size:10px;color:var(--d-muted);font-weight:500;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:5px">About / Bio</div>
+      <textarea id="ep-bio" rows="3" placeholder="Tell others what you're working on and what you're looking for…" style="width:100%;padding:9px 12px;background:var(--d-s2);border:1px solid var(--d-border);border-radius:9px;font-size:13px;color:var(--d-text);font-family:var(--sans);outline:none;resize:vertical" onfocus="this.style.borderColor='var(--d-gold)'" onblur="this.style.borderColor='var(--d-border)'"></textarea>
+    </div>
+    <div style="margin-bottom:1.5rem">
+      <div style="font-size:10px;color:var(--d-muted);font-weight:500;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:8px">Interests <span style="font-weight:300;letter-spacing:0">(shown on your profile)</span></div>
+      <div style="display:flex;gap:7px;margin-bottom:8px">
+        <input id="ep-int-inp" type="text" placeholder="Add an interest…" style="flex:1;padding:8px 12px;background:var(--d-s2);border:1px solid var(--d-border);border-radius:20px;font-size:12px;color:var(--d-text);font-family:var(--sans);outline:none" onfocus="this.style.borderColor='var(--d-gold)'" onblur="this.style.borderColor='var(--d-border)'" onkeydown="if(event.key==='Enter')epAddInt()"/>
+        <button onclick="epAddInt()" style="padding:8px 14px;background:var(--d-gold);color:var(--d-bg);border:none;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;font-family:var(--sans)">Add</button>
+      </div>
+      <div id="ep-int-list" style="display:flex;flex-wrap:wrap;gap:5px;min-height:22px"></div>
+    </div>
+
+    <!-- theme toggle -->
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:var(--d-s2);border:1px solid var(--d-border);border-radius:10px;margin-bottom:14px">
+      <div>
+        <div style="font-size:13px;font-weight:500;color:var(--d-text);font-family:var(--sans)">Appearance</div>
+        <div style="font-size:11px;color:var(--d-muted);font-weight:300;font-family:var(--sans)" id="theme-label">Dark mode</div>
+      </div>
+      <div id="theme-toggle" onclick="toggleTheme()" style="width:44px;height:24px;border-radius:12px;background:var(--d-gold);cursor:pointer;position:relative;transition:background 0.2s;flex-shrink:0">
+        <div id="theme-thumb" style="position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#0c0b09;transition:transform 0.2s;display:flex;align-items:center;justify-content:center;font-size:11px">🌙</div>
+      </div>
+    </div>
+
+    <!-- save/cancel -->
+    <div style="display:flex;gap:10px;justify-content:flex-end">
+      <button onclick="closeEditModal()" style="padding:10px 20px;background:transparent;border:1px solid var(--d-border);border-radius:9px;font-size:13px;color:var(--d-muted2);cursor:pointer;font-family:var(--sans)">Cancel</button>
+      <button onclick="saveProfile()" style="padding:10px 24px;background:var(--d-gold);border:none;border-radius:9px;font-size:13px;font-weight:500;color:var(--d-bg);cursor:pointer;font-family:var(--sans);display:flex;align-items:center;gap:7px"><span>Save Changes</span></button>
+    </div>
+
+    <!-- saved toast -->
+    <div id="ep-toast" style="position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);background:var(--d-greenl);color:#fff;font-size:12px;padding:7px 18px;border-radius:20px;opacity:0;transition:opacity 0.3s;pointer-events:none;white-space:nowrap;font-family:var(--sans)">Profile saved!</div>
+  </div>
+</div>
+
+<!-- Scripts (order matters) -->
+<script src="js/nav.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/match.js"></script>
+<script src="js/swipe.js"></script>
+<script src="js/collab.js"></script>
+<script src="js/mentor.js"></script>
+<script src="js/profile.js"></script>
+<script src="js/splash.js"></script>
+</body>
+</html>
